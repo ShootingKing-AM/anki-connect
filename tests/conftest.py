@@ -164,7 +164,7 @@ def set_up_test_deck_and_test_model_and_two_notes():
         css="* {}",
     )
 
-    # deck_id = ac.createDeck("test_deck")
+    deck_id = 1 # ac.createDeck("test_deck")
 
     note1_id = ac.addNote(dict(
         deckName="Default",
