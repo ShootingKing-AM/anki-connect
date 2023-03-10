@@ -167,14 +167,14 @@ def set_up_test_deck_and_test_model_and_two_notes():
     # deck_id = ac.createDeck("test_deck")
 
     note1_id = ac.addNote(dict(
-        deckName="test_deck",
+        deckName="Default",
         modelName="test_model",
         fields={"field1": "note1 field1", "field2": "note1 field2"},
         tags={"tag1"},
     ))
 
     note2_id = ac.addNote(dict(
-        deckName="test_deck",
+        deckName="Default",
         modelName="test_model",
         fields={"field1": "note2 field1", "field2": "note2 field2"},
         tags={"tag2"},
