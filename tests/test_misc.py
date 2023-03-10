@@ -3,7 +3,7 @@ import os
 import aqt
 import pytest
 
-from conftest import ac, anki_connect_config_loaded, \
+from conftest import ac, test_deck_name, anki_connect_config_loaded, \
     set_up_test_deck_and_test_model_and_two_notes, \
     current_decks_and_models_etc_preserved, wait
 

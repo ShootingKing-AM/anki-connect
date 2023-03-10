@@ -1,6 +1,6 @@
 import pytest
 
-from conftest import ac
+from conftest import ac, test_deck_name
 
 
 def test_deckNames(session_with_profile_loaded):

@@ -1,7 +1,7 @@
 import pytest
 from anki.errors import NotFoundError  # noqa
 
-from conftest import ac
+from conftest import ac, test_deck_name
 
 
 def make_note(*, front="front1", allow_duplicates=False):

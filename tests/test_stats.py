@@ -1,4 +1,4 @@
-from conftest import ac
+from conftest import ac, test_deck_name
 
 
 def test_getNumCardsReviewedToday(setup):

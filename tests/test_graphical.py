@@ -1,6 +1,6 @@
 import pytest
 
-from conftest import ac, wait_until, \
+from conftest import ac, test_deck_name, wait_until, \
         close_all_dialogs_and_wait_for_them_to_run_closing_callbacks, \
         get_dialog_instance
 
