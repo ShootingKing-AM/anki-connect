@@ -18,8 +18,8 @@ def test_getCollectionStatsHTML(setup):
 
 class TestReviews:
     def test_zero_reviews_for_a_new_deck(self, setup):
-        assert ac.cardReviews(deck="test_deck", startID=0) == []
-        assert ac.getLatestReviewID(deck="test_deck") == 0
+        assert ac.cardReviews(deck=test_deck_name, startID=0) == []
+        assert ac.getLatestReviewID(deck=test_deck_name) == 0
 
     def test_some_reviews_for_a_reviewed_deck(self, setup):
         ac.insertReviews(reviews=[
@@ -27,8 +27,8 @@ class TestReviews:
             (789, setup.card_ids[1], -1, 1, -60, -60, 0, 4846, 0)
         ])
 
-        assert len(ac.cardReviews(deck="test_deck", startID=0)) == 2
-        assert ac.getLatestReviewID(deck="test_deck") == 789
+        assert len(ac.cardReviews(deck=test_deck_name, startID=0)) == 2
+        assert ac.getLatestReviewID(deck=test_deck_name) == 789
         assert ac.getReviewsOfCards(cards=[setup.card_ids[0]]) == \
                 {
                     setup.card_ids[0]: [

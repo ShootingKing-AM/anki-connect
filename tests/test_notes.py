@@ -6,7 +6,7 @@ from conftest import ac
 
 def make_note(*, front="front1", allow_duplicates=False):
     note = {
-        "deckName": "test_deck",
+        "deckName": test_deck_name,
         "modelName": "Basic",
         "fields": {"Front": front, "Back": "back1"},
         "tags": ["tag1"],
@@ -49,7 +49,7 @@ class TestNoteAddition:
 
     def test_bug164(self, setup):
         note = {
-            "deckName": "test_deck",
+            "deckName": test_deck_name,
             "modelName": "Basic",
             "fields": {"Front": " Whitespace\n", "Back": ""},
             "options": {"allowDuplicate": False, "duplicateScope": "deck"}

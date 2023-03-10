@@ -21,7 +21,8 @@ except ImportError:
 
 
 ac = AnkiConnect()
-
+# test_deck_name = "test_deck"
+test_deck_name = "Default"
 
 # wait for n seconds, while events are being processed
 def wait(seconds):
@@ -164,7 +165,7 @@ def set_up_test_deck_and_test_model_and_two_notes():
         css="* {}",
     )
 
-    deck_id = 1 # ac.createDeck("test_deck")
+    deck_id = 1 # ac.createDeck(test_deck_name)
 
     note1_id = ac.addNote(dict(
         deckName="Default",

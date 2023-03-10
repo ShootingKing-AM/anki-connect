@@ -25,12 +25,12 @@ def test_guiCheckDatabase(setup, run_background_tasks_on_main_thread):
 
 
 def test_guiDeckOverview(setup):
-    assert ac.guiDeckOverview(name="test_deck") is True
+    assert ac.guiDeckOverview(name=test_deck_name) is True
 
 
 class TestAddCards:
     note = {
-        "deckName": "test_deck",
+        "deckName": test_deck_name,
         "modelName": "Basic",
         "fields": {"Front": "new front1", "Back": "new back1"},
         "tags": ["tag1"]
@@ -81,7 +81,7 @@ class TestAddCards:
 class TestReviewActions:
     @pytest.fixture
     def reviewing_started(self, setup):
-        assert ac.guiDeckReview(name="test_deck") is True
+        assert ac.guiDeckReview(name=test_deck_name) is True
 
     def test_startCardTimer(self, reviewing_started):
         assert ac.guiStartCardTimer() is True
@@ -96,10 +96,10 @@ class TestReviewActions:
 
     def test_guiAnswerCard(self, reviewing_started):
         ac.guiShowAnswer()
-        reviews_before = ac.cardReviews(deck="test_deck", startID=0)
+        reviews_before = ac.cardReviews(deck=test_deck_name, startID=0)
         assert ac.guiAnswerCard(ease=4) is True
 
-        reviews_after = ac.cardReviews(deck="test_deck", startID=0)
+        reviews_after = ac.cardReviews(deck=test_deck_name, startID=0)
         assert len(reviews_after) == len(reviews_before) + 1
 
 

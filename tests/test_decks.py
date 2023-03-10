@@ -25,16 +25,16 @@ def test_changeDeck(setup):
 
 def test_deleteDeck(setup):
     before = ac.deckNames()
-    ac.deleteDecks(decks=["test_deck"], cardsToo=True)
+    ac.deleteDecks(decks=[test_deck_name], cardsToo=True)
     after = ac.deckNames()
-    assert {*before} - {*after} == {"test_deck"}
+    assert {*before} - {*after} == {test_deck_name}
 
 
 def test_deleteDeck_must_be_called_with_cardsToo_set_to_True_on_later_api(setup):
     with pytest.raises(Exception):
-        ac.deleteDecks(decks=["test_deck"])
+        ac.deleteDecks(decks=[test_deck_name])
     with pytest.raises(Exception):
-        ac.deleteDecks(decks=["test_deck"], cardsToo=False)
+        ac.deleteDecks(decks=[test_deck_name], cardsToo=False)
 
 
 def test_getDeckConfig(session_with_profile_loaded):
