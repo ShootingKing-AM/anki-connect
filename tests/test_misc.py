@@ -3,7 +3,7 @@ import os
 import aqt
 import pytest
 
-from conftest import ac, anki_connect_config_loaded, \
+from conftest import ac, test_deck_name, anki_connect_config_loaded, \
     set_up_test_deck_and_test_model_and_two_notes, \
     current_decks_and_models_etc_preserved, wait
 
@@ -62,16 +62,16 @@ class TestExportImport:
 
     def test_exportPackage(self,  session_with_profile_loaded, setup):
         filename = session_with_profile_loaded.base + "/export.apkg"
-        ac.exportPackage(deck="test_deck", path=filename)
+        ac.exportPackage(deck=test_deck_name, path=filename)
 
     def test_importPackage(self, session_with_profile_loaded):
         filename = session_with_profile_loaded.base + "/export.apkg"
 
         with current_decks_and_models_etc_preserved():
             set_up_test_deck_and_test_model_and_two_notes()
-            ac.exportPackage(deck="test_deck", path=filename)
+            ac.exportPackage(deck=test_deck_name, path=filename)
 
         with current_decks_and_models_etc_preserved():
-            assert "test_deck" not in ac.deckNames()
+            assert test_deck_name not in ac.deckNames()
             ac.importPackage(path=filename)
-            assert "test_deck" in ac.deckNames()
+            assert test_deck_name in ac.deckNames()
